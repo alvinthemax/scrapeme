@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Link with Copy & Random Image</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f9f9f9;
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .link-box {
+      background: #ffffff;
+      padding: 15px 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 30px;
+    }
+
+    .link-box a {
+      text-decoration: none;
+      color: #007acc;
+      font-weight: 500;
+      font-size: 1.1rem;
+    }
+
+    .copy-btn {
+      cursor: pointer;
+      background-color: #e0f0ff;
+      border: none;
+      padding: 6px 10px;
+      border-radius: 6px;
+      font-size: 1rem;
+      transition: background 0.3s;
+    }
+
+    .copy-btn:hover {
+      background-color: #cce8ff;
+    }
+
+    .image-container img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="link-box">
+    <a id="link" href="https://alvinthemax.github.io/scrapeme" target="_blank">https://example.com</a>
+    <button class="copy-btn" onclick="copyToClipboard()">Copy</button>
+  </div>
+
+  <div class="image-container">
+    <img src="https://picsum.photos/300/200" alt="Random small image"/>
+  </div>
+
+  <script>
+    function copyToClipboard() {
+      const link = document.getElementById("link").href;
+      navigator.clipboard.writeText(link).then(() => {
+        alert("Link copied to clipboard!");
+      });
+    }
+  </script>
+
+</body>
+  </html>
